@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moore"
+version = "1.0.0"
+description = "Grafos de Moore de diametro 2 construidos por busca exaustiva, com a condicao espectral como juiz independente."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "condeDeveloper" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.scripts]
+moore = "moore.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["moore*"]
+
+[tool.pytest.ini_options]
+testpaths = ["testes"]
+addopts = "-q"
